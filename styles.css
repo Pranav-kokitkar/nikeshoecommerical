@@ -3,7 +3,14 @@
     padding: 0px;
 }
 
+
+
 body{
+    user-select: none; /* Disables text selection */
+    -webkit-user-select: none; /* Chrome, Safari */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    -moz-user-select: none; /* Firefox */
+
     box-sizing: border-box;
     scroll-behavior: smooth;
     overflow-x: hidden;
@@ -57,66 +64,96 @@ body{
     }
 }
 
-
-.page1{
+.page1 {
     display: flex;
     justify-content: space-between;
     align-items: center;
     background-color: white;
+    position: relative; /* Ensure the circle stays behind within this container */
+    z-index: 1; /* Maintain current layering for .page1 content */
 }
 
-.sname, .shoe1, .sdescription{
+.sname, .shoe1, .sdescription {
     flex: 1;
 }
 
-.sname{
+.sname {
     height: 51rem;
-    h3{
-        font-size: 10rem;
-        font-weight: 900;
-        color: rgba(152,0,7,255);
-        padding-top: 10vh;
-        padding-left: 10vh;
-    }
 }
 
-.shoe1{
+.sname h3 {
+    font-size: 10.4rem;
+    font-weight: 900;
+    color: rgba(152, 0, 7, 255);
+    padding-top: 5vh;
+    padding-left: 10vh;
+}
+
+.shoe1 {
     height: 100%;
     padding-bottom: 100px;
-    img{
-        width: 500px;
-        height: 600px;
-        /* transition: 0.5s ease-in-out;; */
-
-        &:hover{
-            scale: 1.3;
-            rotate: -40deg;
-        }
-    }
+    position: relative; /* Enable layering control */
+    z-index: 1; /* Shoe content stays above the circle */
 }
 
-.sdescription{
+.shoe1 .circle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    height: 400px;
+    background-color: rgba(152, 0, 7, 0.1); /* Subtle effect for the circle */
+    border-radius: 50%;
+    z-index: -1; /* Circle stays behind all other elements */
+}
+
+.shoe1 img {
+    width: 500px;
+    height: 600px;
+    rotate: -40deg;
+    z-index: 40; /* Ensure the image is above other .shoe1 elements */
+    /* transition: 0.5s ease-in-out; */
+}
+
+.shoe1 img:hover {
+    scale: 1.3;
+    rotate: -40deg;
+}
+
+.sdescription {
     height: 50rem;
-    p{
-        font-size: 1.2rem;
-        font-weight: 500;
-        color: #33322f;
-        padding-top: 60vh;
-        padding-right: 5vh;
-        padding-left: 5vh;
-        span{
-            color: rgba(152,0,7,255);
-        }
-    }
 }
 
-#cursor img{
+.sdescription p {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: #33322f;
+    padding-top: 60vh;
+    padding-right: 5vh;
+    padding-left: 5vh;
+}
+
+.sdescription p span {
+    color: rgba(152, 0, 7, 255);
+}
+
+#cursor {
+    position: fixed;
+    transform: translate(-100%, -100%);
     width: 90px;
     height: 90px;
-    border-radius: 50%;
-    position: fixed;
-    z-index: 1000;
+    pointer-events: none; /* Prevent interaction issues */
+    z-index: 1000; /* Keep it above all other elements */
 }
+
+#cursor img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    opacity: 0;
+}
+
 
 /* .box{
     display: flex;
@@ -138,3 +175,53 @@ body{
     color: #fff;
     font-size: 80vh;
 } */
+
+
+.page2{
+    height: 54rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 60px;
+}
+
+.left-div, .right-div{
+    flex: 1;
+}
+
+.left-div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    img{
+        width: 580px;
+        height: 580px;
+        z-index: 4;
+        rotate: -10deg;
+        padding-bottom: 40px;
+    }
+}
+
+.circle{
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+    position: absolute;
+    background-color: bisque;
+    z-index: 3;
+}
+
+.right-div{
+    padding-left: 80px;
+    ul li{
+        color: black;
+        font-family: "Barlow", serif;
+        text-decoration: none;
+        font-size: 1.9rem;
+        line-height: 80px;
+    }
+}
+
+span{
+    color: rgba(152, 0, 7, 255);
+}
