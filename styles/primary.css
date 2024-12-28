@@ -1,0 +1,43 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+body{
+    user-select: none; /* Disables text selection */
+    -webkit-user-select: none; /* Chrome, Safari */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    -moz-user-select: none; /* Firefox */
+    background-color: white; 
+    z-index: 1;
+    
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+    height: 200rem;
+    h3,p{
+        font-family: "Barlow", serif;
+    }
+}
+
+html{
+    font-size: 100%;
+    overflow-x: hidden;
+}
+#cursor {
+    position: fixed;
+    transform: translate(-100%, -100%);
+    width: 90px;
+    height: 90px;
+    pointer-events: none; 
+    z-index: 1000; 
+}
+
+#cursor img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    opacity: 0;
+}
+
+

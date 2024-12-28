@@ -42,8 +42,12 @@ function page1(){
     tl.to("#cursor img",{
         opacity: 1,
     })
+    tl.to(".nikebgvideo",{
+        opacity: 1,
+    })
 }
 page1();
+
 
 let cursor = document.querySelector('#cursor');
 let main = document.querySelector('#main');
