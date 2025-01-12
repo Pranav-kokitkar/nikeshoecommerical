@@ -39,9 +39,18 @@
         padding-right: 5vh;
         padding-left: 5vh;
     }
+
+    .left-div img {
+        width: 340px;
+        height: 180px;
+        padding: 0;
+        margin: 0;
+    }
+
+    .right-div ul li{
+        font-size: 1.5rem;
+    }
 }
-
-
 
 
 /* General responsive styles */
@@ -179,6 +188,10 @@
 }
 
 @media (max-width: 370px) {
+    body{
+        background-color: rgb(243, 243, 243) !important;
+    }
+
     .navbar {
         height: 7vh;
     }
@@ -200,5 +213,12 @@
     .right-div ul li {
         font-size: 5vw;
         line-height: 50px;
+    }
+
+    .navbar {
+        .logo img {
+            width: 100px;
+            height: 40px;
+        }
     }
 }

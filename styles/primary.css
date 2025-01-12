@@ -9,7 +9,7 @@ body{
     -webkit-user-select: none; /* Chrome, Safari */
     -ms-user-select: none; /* Internet Explorer/Edge */
     -moz-user-select: none; /* Firefox */
-    background-color: white; 
+    background-color: lightgray; 
     z-index: 1;
     
     box-sizing: border-box;
